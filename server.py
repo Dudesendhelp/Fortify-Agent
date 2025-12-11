@@ -4,6 +4,9 @@ from datetime import datetime
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+if not os.path.exists("uploads"):
+    os.makedirs("uploads")
+
 upload_folder = "uploads"
 
 def condb():
@@ -59,3 +62,4 @@ def home():
 
 if __name__ == "__main__":
     app.run()
+
